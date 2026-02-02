@@ -1,4 +1,4 @@
-# Ethernet Frame Parser + CRC32 (VHDL) - Simulation/Verification Project
+# Ethernet Frame Parser + CRC32 + Byte Generator (VHDL) 
 
 A VHDL project to simulate RX of ethernet. Generates Ethernet-like byte streams, parses L2 headers (DST/SRC/VLAN/Ethertype), streams payload, and verifies Frame Check Sequence (FCS) using CRC32.
 
