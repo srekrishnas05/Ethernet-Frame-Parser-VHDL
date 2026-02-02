@@ -26,7 +26,7 @@ Structure
   4) Run behavioral simulation
  
   ## Notes
-  - This is a simulation/verification project so XDC isn't needed but if you do, you need a constraint file with pins for the clock (to the onboard clock pin) along with a real MAC/PHY interface
-  - rx_source is a "stress testing" device that can run frames back to back
+  - This is mainly for simulation at the moment, HOWEVER, it can be run on an FPGA (with an ethernet port) with a few modifications. Find your master xdc file and create an xdc for clock and your ethernet port. You won't need rx_source but you do need an actual MAC/PHY device that can send real bytes. I couldn't put together a real MAC source to send bytes to my FPGA so I opted to post this the way I did, however you will need to make a few changes. The modules rely on rx_source so you'd need to change that to your input from your constraint which you set in your top module as an 8 bit vector in (ethernet) and you'd need to ensure your clock is at least tied to the clock pin on FPGA. If Nexys A7, it's a 100MHz oscillating clock but you could change that within clock wizard to 125Mhz to replicate 1Gigabit ethernet (a bit unrelated but you'd need a cat5 cable for these speeds).
+  - rx_source is a "stress testing" device that can run frames back to back in this iteration, but the project, once again, can be used as a real ethernet parser. 
  
   
